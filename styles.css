@@ -71,13 +71,16 @@ font-weight: bold;
 
 }
 
+
 .blocklist li{
 display: flex;
 justify-content: center;
-outline: 1px solid red;
+
+
 }
 .blocklist>li>div{
   flex-grow: 1;
+  align-self: center;
 }
 .blocklist>li>img{
   width: 100px;
@@ -86,8 +89,23 @@ outline: 1px solid red;
 .blocklist>li:nth-child(odd){
 flex-direction: row;
 text-align: left;
+border-right: 20px solid #eee;
 }
 .blocklist>li:nth-child(even){
 flex-direction: row-reverse;
 text-align: right;
+border-left: 20px solid #eee;
+}
+.mylife{
+  text-align: justify;
+  max-width: 500px ;
+  margin: 0 auto;
+margin-bottom: 100px;
+}
+.language li{
+  display:inline;
+  font-weight: bold;
+}
+Contact{
+  
 }
