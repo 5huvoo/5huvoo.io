@@ -9,13 +9,16 @@ text-decoration: inherit;
 line-height: inherit;
 color: inherit;
 }
+body{
+  background-color: #eee;
+}
 html, body{
 
   font-family: "Heivetica Neue",Helvetica,sans-serif;
   font-size: 18px;
   line-height: 30px;
   color: #444;
-  text-shadow:10px 10px 0px #fff;
+  text-shadow:1px 1px 0px #fff;
 }
 body{
 text-align: center;
@@ -49,20 +52,56 @@ margin: 0 auto;
 
 }
 
+section:target h1{
+  animation: flash 1s;
+}
+@@keyframes flash {
+from{text-shadow: 5px 5 px 0 #fd6, -5px -5px 0px #fd6;}
 
+ to text-shadow:0px 0px 0px #fd6;
+
+}
 
 .hero{
-   outline:1px solid red;
+   outline:1px solid white;
+
    height: :100%;
    display: flex;
    flex-direction: column;
    justify-content: center;
 }
+.rotate>img{
+  width: 300px;
+  height: 300px;
+}
+.rotate{
+-webkit-transition-duration: .5s;
+-moz-transition-duration: 0.5s;
+-o-transition-duration: 0.5s;
+transition-duration: 0.5s;
+
+-webkit-transition-property: -webkit-transform;
+-moz-transition-property: -moz-transform;
+-o-transition-property: -o-transform;
+transition-property: transform;
+
+overflow:hidden;
+
+}
+
+.rotate:hover
+{
+-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-o-transform:rotate(360deg);
+}
+
+
 
 .headshot{
     transition:trasnform 1s;
 }
-.headshot:hover{
+.headshot:hover img{
   trasform:rotate(360deg);
 }
 .list li{
@@ -96,6 +135,18 @@ flex-direction: row-reverse;
 text-align: right;
 border-left: 20px solid #eee;
 }
+
+@media (max-width:500px) {
+  .blocklist>li{
+    display: block;
+    text-align: center !important;
+    border-width: 0;
+    margin: 50px 0;
+  }
+}
+
+
+
 .mylife{
   text-align: justify;
   max-width: 500px ;
@@ -103,9 +154,33 @@ border-left: 20px solid #eee;
 margin-bottom: 100px;
 }
 .language li{
-  display:inline;
+/*  display:inline;*/
+list-style-type: none;
   font-weight: bold;
 }
+
+
 Contact{
-  
+
+}
+.nav{
+  width: 100%;
+  display: flex;
+  border-bottom: 20px;
+  position: fixed;
+}
+.nav li{
+  list-style-type: none;
+  flex :1;
+}
+.nav li a{
+display: block;
+line-height: 50px;
+background-color: #fc0;
+color: #666;
+text-shadow: 1px 1px 0 #fd6;
+transition: background-color 0.2s;
+}
+.nav li a:hover{
+  background-color: #fa0;
 }
